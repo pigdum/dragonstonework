@@ -36,17 +36,19 @@ def quest():
     time.sleep(2)
     print('You arrive at a bridge crossing the river of coal. A group of bandits block the bridge. ')
     bridge= raw_input('They do not see you yet, (a)Sneak around, (b)attack with your '+weapon +' and '+mount +', or (c)try to talk it through with them:   ')
-    if bridge == 'a':
+    while bridge== ('a'):
         if classe == 'thief':
             print ('(a) sneak under the bridge or (b) wade through the river')
             sneak1 = raw_input()
             if sneak1 == 'a':
                 print('You distract the guards and climb under the bridge to the other side, your ' +mount +' follows you.')
+                break
             if sneak1 == 'b':
                 print ('you wade acrosss the river with out them knowing.')
-
+                break
+    
         if classe == 'knight' or 'mage':
-            return ('You attempt to wade through the river, but one of the bandits spots you and fires a volly of arrows')
+            print ('You attempt to wade through the river, but one of the bandits spots you and fires a volly of arrows')
             print ('(a)speed up or (b)dive and swim downstream')
             sneak2= raw_input()
             if sneak2=='a':
@@ -54,20 +56,24 @@ def quest():
                 exit()
             if sneak2=='b':
                 print('you swimm with the current away from the bridge. By guiding yourself to shore you arive on the other side, off course however. You have lost your ' +mount+'.')
+                break
 
-    if bridge == 'b':
-        if classe == 'knight':
-            print('you approch the party with your ' + weapon +'drawn and attack the party, catching them off guard.')
-            print('your '+weapon+' anialites the first unsuspecting victim and the rest flee. you now have 15 gold '
+while bridge == 'b':
+    if classe == 'knight':
+        print('you approch the party with your ' + weapon +'drawn and attack the party, catching them off guard.')
+            print('your '+weapon+' anialites the first unsuspecting victim and the rest flee. you now have 15 gold ')
+            break
         if classe == 'mage':
-            print('you cast a '+weapon(9-20)+' spell at the party, they are blown into the river and washed away.' )
-        if classe == 'thief':
-            print('you take down the first guard imediatly but are soon after impailed by a sword. comand d to exit')
+            print('you cast a spell at the party, they are blown into the river and washed away.' )
+            break
+    if classe == 'thief':
+        print('you take down the first guard imediatly but are soon after impailed by a sword. ')
+            exit()
 
-    if bridge == 'c':
-        print('you approch the bandits and are struck down immediatly. command d to exit')
+while bridge == 'c':
+    print('you approch the bandits and are struck down immediatly.')
         exit()
-
+    
     print ('you continue your journy...')
     print ('.')
     time.sleep(.400)
